@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d10" />
+  <meta name="color-scheme" content="dark light" />
+  <meta name="description" content="A clean and simple way to save videos, photos and audio from supported platforms." />
+  <title>NURO DOWNLOADER — Save your media</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+  <canvas id="ambientCanvas" class="ambient-canvas" aria-hidden="true"></canvas>
+  <div class="pointer-glow" id="pointerGlow" aria-hidden="true"></div>
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="mast">
+    <a class="brand" href="#/" aria-label="NURO Downloader home">
+      <span class="brand-mark">N<span>.</span></span>
+      <span class="brand-name">NURO <b>DOWNLOADER</b></span>
+    </a>
+
+    <div class="header-actions">
+      <button id="modeBtn" class="mode-btn" type="button" aria-label="Switch to light mode" title="Switch to light mode">
+        <span id="modeIcon" class="mode-icon" aria-hidden="true">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.2 15.4A8.5 8.5 0 0 1 8.6 3.8 8.5 8.5 0 1 0 20.2 15.4Z"/></svg>
+        </span>
+        <span id="modeName">Dark</span>
+      </button>
+
+      <div class="palette-control" id="paletteControl">
+        <button id="paletteBtn" class="palette-btn" type="button" aria-haspopup="dialog" aria-expanded="false" aria-controls="palettePanel">
+          <span id="paletteDot" class="palette-dot" aria-hidden="true"></span>
+          <span>Accent</span>
+          <svg class="chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m7 10 5 5 5-5"/></svg>
+        </button>
+        <div id="palettePanel" class="palette-panel hidden" role="dialog" aria-label="Accent colour settings">
+          <div class="palette-heading">
+            <div>
+              <strong>Color studio</strong>
+              <span>Make the interface yours</span>
+            </div>
+            <button id="paletteClose" class="panel-close" type="button" aria-label="Close color studio">×</button>
+          </div>
+          <div id="paletteGrid" class="palette-grid" aria-label="Accent color presets"></div>
+          <label class="custom-color-row" for="customColor">
+            <span class="custom-color-copy"><strong>Custom color</strong><small>Choose any accent shade</small></span>
+            <span class="custom-color-preview"><input id="customColor" type="color" value="#2B7880" aria-label="Choose a custom accent color"></span>
+          </label>
+          <p class="palette-note">Your appearance settings are saved on this device.</p>
+        </div>
+      </div>
+
+      <span class="online-indicator"><i></i> ONLINE</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <section id="home" class="view">
+      <div class="hero hero-cinematic">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-line"></span> YOUR MEDIA. REIMAGINED. <span class="eyebrow-line"></span></div>
+          <h1>Download<br><span class="headline-accent">without limits.</span></h1>
+          <p>Bring your favorite videos, photos and audio together in one beautiful place. Paste a link and let NURO do the rest.</p>
+          <div class="platform-list" aria-label="Supported platforms">
+            <span><i class="platform-dot youtube"></i>YouTube</span>
+            <span><i class="platform-dot instagram"></i>Instagram</span>
+            <span><i class="platform-dot tiktok"></i>TikTok</span>
+            <span><i class="platform-dot facebook"></i>Facebook</span>
+          </div>
+        </div>
+        <div class="holo-scene" aria-hidden="true">
+          <div class="holo-orbit orbit-one"></div><div class="holo-orbit orbit-two"></div><div class="holo-orbit orbit-three"></div>
+          <div class="holo-core"><span class="core-n">N</span><span class="core-flare"></span></div>
+          <div class="holo-beam"></div><div class="holo-platform"><i></i><i></i><i></i></div>
+          <span class="holo-tag tag-top">INSTANT ACCESS</span><span class="holo-tag tag-bottom">MEDIA ENGINE <b>ONLINE</b></span>
+          <span class="holo-particle particle-a"></span><span class="holo-particle particle-b"></span><span class="holo-particle particle-c"></span>
+        </div>
+      </div>
+
+      <section class="download-studio" aria-label="Media downloader">
+        <div class="studio-topline">
+          <div class="studio-label"><span class="studio-pulse"></span> DOWNLOAD STUDIO</div>
+          <span class="studio-step">01 <i>/</i> 01</span>
+        </div>
+        <label class="input-label" for="videoUrl">PASTE YOUR LINK</label>
+        <div class="url-row">
+          <div class="input-wrap">
+            <svg class="link-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.1 0l3-3A5 5 0 0 0 13 2.9l-1.7 1.7"/><path d="M14 11a5 5 0 0 0-7.1 0l-3 3A5 5 0 0 0 11 21.1l1.7-1.7"/></svg>
+            <input id="videoUrl" type="url" placeholder="https://paste-your-link-here.com" autocomplete="off" inputmode="url" aria-label="Video or photo URL">
+            <div class="input-tools">
+              <button id="clearBtn" class="input-tool hidden" type="button" aria-label="Clear link" title="Clear">×</button>
+              <button id="pasteBtn" class="input-tool paste-tool" type="button" aria-label="Paste from clipboard" title="Paste from clipboard">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="8" y="3" width="8" height="4" rx="1"/><path d="M16 5h2a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V7a2 2 0 0 1 2-2h2"/></svg>
+                <span>Paste</span>
+              </button>
+            </div>
+          </div>
+          <button id="resolveBtn" class="find-btn" type="button">
+            <span class="spin" aria-hidden="true"></span>
+            <span class="find-label">Find media</span>
+            <svg class="find-arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+        </div>
+        <div class="input-footnote">
+          <span id="detected" class="detected-platform" aria-live="polite"></span>
+          <span class="privacy-note"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg> No sign-up required</span>
+        </div>
+        <p id="status" class="status" role="status" aria-live="polite"></p>
+      </section>
+
+      <div id="skeleton" class="loading-state hidden" aria-label="Finding media">
+        <div class="loading-orb"><span></span></div>
+        <div class="loading-copy"><strong>Connecting to NURO engine</strong><span>Analyzing your link and preparing media options...</span><div class="loading-track"><i></i></div></div>
+        <span class="loading-percent">LIVE</span>
+      </div>
+
+      <div class="feature-strip">
+        <div class="feature-item">
+          <span class="feature-number">01</span>
+          <div><h3>Fast &amp; simple</h3><p>Paste a link. Get your media.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-number">02</span>
+          <div><h3>Quality options</h3><p>Choose video or audio quality.</p></div>
+        </div>
+        <div class="feature-item">
+          <span class="feature-number">03</span>
+          <div><h3>Clean experience</h3><p>No account or extra steps.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="detail" class="view hidden">
+      <button id="backBtn" class="back-btn" type="button">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+        Back to home
+      </button>
+
+      <div class="detail-intro">
+        <div class="cover" id="cover">
+          <img id="thumb" alt="Media preview" referrerpolicy="no-referrer">
+          <video id="thumbVid" class="hidden" muted playsinline preload="metadata"></video>
+          <div class="cover-overlay"></div>
+          <span id="plat" class="platform-chip"></span>
+          <span class="preview-caption">MEDIA PREVIEW</span>
+        </div>
+        <div class="detail-copy">
+          <div class="eyebrow detail-eyebrow"><span class="eyebrow-line"></span> READY TO DOWNLOAD</div>
+          <h2 id="title"></h2>
+          <p>Choose the format that works best for you.</p>
+          <div class="detail-points"><span><i></i> Link processed</span><span><i></i> Options available</span></div>
+        </div>
+      </div>
+
+      <div class="results-heading">
+        <div><span class="section-kicker">YOUR FILES</span><h3>Download options</h3></div>
+        <span id="resultsCount" class="results-count"></span>
+      </div>
+      <div class="tabs" id="tabs" role="tablist" aria-label="Media type">
+        <button data-tab="video" class="tab active" type="button" role="tab" aria-selected="true">Video</button>
+        <button data-tab="photo" class="tab" type="button" role="tab" aria-selected="false">Photo</button>
+        <button data-tab="audio" class="tab" type="button" role="tab" aria-selected="false">Audio</button>
+      </div>
+      <div id="list" class="download-list"></div>
+    </section>
+
+    <button class="back-to-top" id="backToTop" type="button" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="m6 14 6-6 6 6"/></svg>
+  </button>
+  <footer class="footer">
+      <a class="footer-brand" href="#/">NURO<span>.</span></a>
+      <p>Only download content you own or have permission to save.</p>
+      <span class="footer-version">BUILT FOR SIMPLE SHARING</span>
+    </footer>
+  </main>
+
+  <div id="toasts" class="toasts" aria-live="polite" aria-atomic="false"></div>
+  <script src="./config.js"></script>
+  <script src="./script.js"></script>
+</body>
+</html>
