@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en" data-mode="dark">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#080d10" />
+  <meta name="description" content="NURO AI SEO Center — ethical SEO planning, content ideas and backlink tracking." />
+  <title>NURO AI SEO CENTER — SEO Workspace</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./files/seo.css" />
+</head>
+<body>
+  <div class="seo-shell">
+    <header class="seo-header">
+      <a class="seo-brand" href="./index.html"><span class="brand-mark">N<span>.</span></span><span>NURO <b>SEO CENTER</b></span></a>
+      <div class="seo-header-actions"><span class="live-pill"><i></i> WORKSPACE</span><a class="back-link" href="./index.html">← Downloader</a></div>
+    </header>
+
+    <main>
+      <section class="seo-hero">
+        <div class="hero-copy"><div class="eyebrow"><span></span> SEARCH VISIBILITY WORKSPACE</div><h1>Grow with a<br><em>smarter SEO plan.</em></h1><p>Plan helpful content, discover keyword ideas, organize genuine outreach and keep your SEO work in one place.</p><div class="hero-tags"><span>AI ASSISTED</span><span>ETHICAL SEO</span><span>LOCAL CAMPAIGN SAVES</span></div></div>
+        <div class="hero-orb" aria-hidden="true"><div class="orb-ring ring-a"></div><div class="orb-ring ring-b"></div><div class="orb-core">N<span>SEO</span></div><i class="orb-dot dot-a"></i><i class="orb-dot dot-b"></i></div>
+      </section>
+
+      <section class="status-row" aria-label="Service status">
+        <div class="status-card"><span class="status-icon">✦</span><div><small>AI PROVIDER</small><strong id="aiStatus">Checking connection…</strong></div></div>
+        <div class="status-card"><span class="status-icon">⌁</span><div><small>CAMPAIGN PLANS</small><strong id="campaignCount">0 saved</strong></div></div>
+        <div class="status-card"><span class="status-icon">↗</span><div><small>BACKLINK RECORDS</small><strong id="backlinkCount">0 tracked</strong></div></div>
+      </section>
+
+      <div class="workspace-layout">
+        <aside class="sidebar" aria-label="SEO tools navigation">
+          <div class="sidebar-label">WORKSPACE</div>
+          <button class="nav-item active" data-panel="overview"><span>◫</span> Overview</button>
+          <button class="nav-item" data-panel="writer"><span>✎</span> AI SEO Writer</button>
+          <button class="nav-item" data-panel="keywords"><span>⌕</span> Keyword Ideas</button>
+          <button class="nav-item" data-panel="campaign"><span>◎</span> Campaign Planner</button>
+          <button class="nav-item" data-panel="backlinks"><span>↗</span> Backlink Tracker</button>
+          <button class="nav-item" data-panel="audit"><span>⌗</span> On-page SEO Review</button>
+          <div class="sidebar-note"><span>NOTE</span><p>AI suggestions are planning aids. Search volume, rankings and live backlink counts require a dedicated SEO data provider.</p></div>
+        </aside>
+
+        <section class="workspace-main">
+          <section class="panel active" id="panel-overview">
+            <div class="panel-heading"><div><span class="section-kicker">YOUR CONTROL ROOM</span><h2>SEO overview</h2><p>Start with a topic, then turn useful ideas into a practical plan.</p></div><span class="panel-index">01 / 06</span></div>
+            <div class="overview-grid">
+              <button class="tool-card" data-open="writer"><span class="tool-icon">✎</span><strong>AI SEO Writer</strong><p>Create a content brief, SEO title, meta description and article draft.</p><span class="tool-cta">OPEN TOOL ↗</span></button>
+              <button class="tool-card" data-open="keywords"><span class="tool-icon">⌕</span><strong>Keyword Ideas</strong><p>Explore primary, long-tail and question-based keyword ideas.</p><span class="tool-cta">OPEN TOOL ↗</span></button>
+              <button class="tool-card" data-open="campaign"><span class="tool-icon">◎</span><strong>Campaign Planner</strong><p>Build a 30-day ethical SEO and outreach roadmap.</p><span class="tool-cta">OPEN TOOL ↗</span></button>
+              <button class="tool-card" data-open="backlinks"><span class="tool-icon">↗</span><strong>Backlink Tracker</strong><p>Keep your own outreach and backlink records organized.</p><span class="tool-cta">OPEN TOOL ↗</span></button>
+              <button class="tool-card" data-open="audit"><span class="tool-icon">⌗</span><strong>On-page SEO Review</strong><p>Review page titles, descriptions, headings and content you provide.</p><span class="tool-cta">OPEN TOOL ↗</span></button>
+              <article class="tool-card info-card"><span class="tool-icon">◇</span><strong>Live SEO data</strong><p>Real backlink discovery, search volume and ranking metrics are not fabricated. Connect an approved SEO data provider when you have its API credentials.</p><span class="tool-cta muted">PROVIDER INTEGRATION READY</span></article>
+            </div>
+            <div class="notice"><b>Important:</b> NURO does not automatically post links to forums, comments or link farms. The campaign planner focuses on useful content and genuine, manually reviewed outreach.</div>
+          </section>
+
+          <section class="panel" id="panel-writer">
+            <div class="panel-heading"><div><span class="section-kicker">CONTENT STUDIO</span><h2>AI SEO Writer</h2><p>Generate a useful content brief and first draft for your website.</p></div><span class="panel-index">02 / 06</span></div>
+            <form class="tool-form" data-action="writer">
+              <label>Topic or article title<input name="topic" required maxlength="240" placeholder="e.g. Best free online tools for students"></label>
+              <div class="form-grid"><label>Primary keyword<input name="keyword" maxlength="160" placeholder="e.g. free online tools"></label><label>Target audience<input name="audience" maxlength="180" placeholder="e.g. Students and creators"></label></div>
+              <div class="form-grid"><label>Website URL<input name="site" type="url" placeholder="https://www.example.com"></label><label>Output language<select name="language"><option>English</option><option>Sinhala</option><option>Tamil</option></select></label></div>
+              <label>Extra context<textarea name="details" rows="3" maxlength="5000" placeholder="Describe your website, product or what the article should cover…"></textarea></label>
+              <button class="primary-btn" type="submit">GENERATE SEO CONTENT <span>↗</span></button>
+            </form>
+            <div class="result-card hidden" id="writerResult"><div class="result-head"><div><span class="section-kicker">AI OUTPUT</span><strong>Content draft</strong></div><button class="subtle-btn" data-copy="writerOutput" type="button">COPY TEXT</button></div><pre id="writerOutput"></pre></div>
+          </section>
+
+          <section class="panel" id="panel-keywords">
+            <div class="panel-heading"><div><span class="section-kicker">SEARCH INTENT IDEAS</span><h2>Keyword research</h2><p>Generate topic clusters and search-intent ideas. These are not live volume metrics.</p></div><span class="panel-index">03 / 06</span></div>
+            <form class="tool-form" data-action="keywords">
+              <label>Main topic<input name="topic" required maxlength="240" placeholder="e.g. video downloader tools"></label>
+              <div class="form-grid"><label>Website URL<input name="site" type="url" placeholder="https://www.example.com"></label><label>Target audience<input name="audience" maxlength="180" placeholder="e.g. Mobile users"></label></div>
+              <div class="form-grid"><label>Output language<select name="language"><option>English</option><option>Sinhala</option><option>Tamil</option></select></label><label>Extra context<input name="details" maxlength="1000" placeholder="Country, niche or content focus"></label></div>
+              <button class="primary-btn" type="submit">FIND KEYWORD IDEAS <span>↗</span></button>
+            </form>
+            <div class="result-card hidden" id="keywordsResult"><div class="result-head"><div><span class="section-kicker">AI OUTPUT</span><strong>Keyword clusters</strong></div><button class="subtle-btn" data-copy="keywordsOutput" type="button">COPY TEXT</button></div><pre id="keywordsOutput"></pre></div>
+          </section>
+
+          <section class="panel" id="panel-campaign">
+            <div class="panel-heading"><div><span class="section-kicker">30-DAY ROADMAP</span><h2>Campaign planner</h2><p>Build a realistic plan for content, technical checks and genuine outreach.</p></div><span class="panel-index">04 / 06</span></div>
+            <form class="tool-form" data-action="campaign">
+              <label>Website URL<input name="site" type="url" required placeholder="https://www.example.com"></label>
+              <div class="form-grid"><label>Campaign topic<input name="topic" required maxlength="240" placeholder="What should this website be known for?"></label><label>Primary keyword<input name="keyword" maxlength="160" placeholder="Main keyword"></label></div>
+              <div class="form-grid"><label>Target audience<input name="audience" maxlength="180" placeholder="Who is this for?"></label><label>Output language<select name="language"><option>English</option><option>Sinhala</option><option>Tamil</option></select></label></div>
+              <label>Extra context<textarea name="details" rows="3" maxlength="3000" placeholder="Existing pages, content goals or constraints…"></textarea></label>
+              <button class="primary-btn" type="submit">BUILD CAMPAIGN PLAN <span>↗</span></button>
+            </form>
+            <div class="result-card hidden" id="campaignResult"><div class="result-head"><div><span class="section-kicker">AI OUTPUT</span><strong>Campaign roadmap</strong></div><div class="result-actions"><button class="subtle-btn" data-copy="campaignOutput" type="button">COPY</button><button class="subtle-btn accent-btn" id="saveCampaign" type="button">SAVE PLAN</button></div></div><pre id="campaignOutput"></pre></div>
+            <div class="saved-list-card"><div class="result-head"><div><span class="section-kicker">LOCAL WORKSPACE</span><strong>Saved campaign plans</strong></div></div><div id="savedCampaigns" class="empty-state">No saved plans yet.</div></div>
+          </section>
+
+          <section class="panel" id="panel-backlinks">
+            <div class="panel-heading"><div><span class="section-kicker">OUTREACH ORGANIZER</span><h2>Backlink tracker</h2><p>Record links you have earned or outreach opportunities you have reviewed.</p></div><span class="panel-index">05 / 06</span></div>
+            <div class="notice"><b>Manual tracker:</b> This tool stores records you enter on this device. It does not crawl the web or verify that a backlink is live. Automated backlink spam can harm a site's search visibility.</div>
+            <form class="tool-form compact-form" id="backlinkForm">
+              <label>Source page URL<input name="source" type="url" required placeholder="https://publisher.example/article"></label>
+              <div class="form-grid"><label>Your target page<input name="target" type="url" required placeholder="https://www.example.com/page"></label><label>Anchor text<input name="anchor" maxlength="180" placeholder="Text used in the link"></label></div>
+              <div class="form-grid"><label>Status<select name="status"><option>Prospect</option><option>Contacted</option><option>Published</option><option>Needs review</option></select></label><label>Notes<input name="notes" maxlength="300" placeholder="Contact, date or notes"></label></div>
+              <button class="primary-btn" type="submit">ADD BACKLINK RECORD <span>＋</span></button>
+            </form>
+            <div class="saved-list-card"><div class="result-head"><div><span class="section-kicker">YOUR RECORDS</span><strong>Backlink inventory</strong></div><button class="subtle-btn" id="exportBacklinks" type="button">EXPORT CSV</button></div><div id="backlinkList" class="empty-state">No backlink records yet.</div></div>
+          </section>
+
+          <section class="panel" id="panel-audit">
+            <div class="panel-heading"><div><span class="section-kicker">PAGE QUALITY REVIEW</span><h2>On-page SEO review</h2><p>Paste the page information you want reviewed. This is an AI text review, not a live website crawl.</p></div><span class="panel-index">06 / 06</span></div>
+            <form class="tool-form" data-action="audit">
+              <label>Website or page URL<input name="site" type="url" placeholder="https://www.example.com/page"></label>
+              <div class="form-grid"><label>Page topic<input name="topic" required maxlength="240" placeholder="What is this page about?"></label><label>Primary keyword<input name="keyword" maxlength="160" placeholder="Main target phrase"></label></div>
+              <label>Page title, meta description, headings and content<textarea name="details" rows="8" required maxlength="5000" placeholder="Title: …&#10;Meta description: …&#10;H1: …&#10;H2: …&#10;Page content summary: …"></textarea></label>
+              <label>Output language<select name="language"><option>English</option><option>Sinhala</option><option>Tamil</option></select></label>
+              <button class="primary-btn" type="submit">REVIEW ON-PAGE SEO <span>↗</span></button>
+            </form>
+            <div class="result-card hidden" id="auditResult"><div class="result-head"><div><span class="section-kicker">AI OUTPUT</span><strong>SEO review</strong></div><button class="subtle-btn" data-copy="auditOutput" type="button">COPY TEXT</button></div><pre id="auditOutput"></pre></div>
+          </section>
+        </section>
+      </div>
+    </main>
+    <footer class="seo-footer"><a href="./index.html">NURO<span>.</span></a><p>Useful content first. Earn trust, not spam links.</p><small>AI responses are suggestions and should be checked before publishing.</small></footer>
+  </div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="./config.js"></script>
+  <script src="./files/seo.js"></script>
+</body>
+</html>
